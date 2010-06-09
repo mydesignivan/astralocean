@@ -1,0 +1,8 @@
+application/config/config.php
+application/config/database.php
+nbproject/*
+uploads/*
+_documentacion/*
+_old_site/*
+_back/*
+
