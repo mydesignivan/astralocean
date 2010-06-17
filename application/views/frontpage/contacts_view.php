@@ -9,20 +9,38 @@ Nam ornare. Vivamus dolor metus, condimentum ac, iaculis non.</p>            -->
 
     <!-- Necessary div for jQuery validation -->
     <div id="contact-form">
-        <form method="post" action="mailer.php">
+        <?php if( $this->session->flashdata('statusmail')=="ok" ){?>
+            <div class="success">Thank you very much for contacting, shortly we will be in contact.</div>
+        <?php }elseif( $this->session->flashdata('statusmail')=="error" ){?>
+            <div class="error">Error in sending email</div>
+        <?php }?>
+            
+            <form id="form1" method="post" action="<?=site_url('/contacts/send/')?>" enctype="application/x-www-form-urlencoded">
             <fieldset>
-                <label>Your name..</label>
-                <input title="required" type="text" name="contact-name" value="" />
+                <div class="left">
+                    <label>Your name..</label>
+                    <input type="text" name="txtName" id="txtName" value="" class="left validator" />
+                </div>
 
-                <label>Your E-mail..</label>
-                <input title="required" type="text" name="contact-email" value="" />
+                <div class="clear left">
+                    <label>Your E-mail..</label>
+                    <input type="text" name="txtEmail" id="txtEmail" value="" class="left validator" />
+                </div>
 
-                <label>Your message..</label>
-                <textarea title="required" name="contact-message" cols="40" rows="5" ></textarea><br/>
-                
-                <button type="submit" name="submit" class="submit">Send it!</button>
+                <div class="clear left">
+                    <label>Your message..</label>
+                    <textarea name="txtConsult" id="txtConsult" cols="40" rows="5" class="left validator"></textarea><br/>
+                </div>
             </fieldset>
+            <button type="button" name="submit" class="submit" onclick="Contact.send();">Send it!</button>
         </form>
+
+        <script type="text/javascript">
+        <!--
+            Contact.initializer();
+        -->
+        </script>
+
     </div>
 </div>
 <!-- end: left-column -->

@@ -42,7 +42,8 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',	'x+b');
 | NOMBRE DE LAS TABLAS (BASE DE DATO)
 |--------------------------------------------------------------------------
 */
-define('TBL_IMAGES', 'images');
+define('TBL_USERS', 'users');
+define('TBL_PRODUCTS', 'products');
 
 
 /*
@@ -50,31 +51,24 @@ define('TBL_IMAGES', 'images');
 | MENSAJES DE ERROR
 |--------------------------------------------------------------------------
 */
-define('ERR_UPLOAD_NOTUPLOAD', 'El archivo no ha podido llegar al servidor.');
+define('ERR_UPLOAD_NOTUPLOAD', 'El archivo de im&aacute; no ha podido llegar al servidor.');
 define('ERR_UPLOAD_MAXSIZE', 'El tamaño del archivo debe ser menor a %s MB.');
 define('ERR_UPLOAD_FILETYPE', 'El tipo de archivo es incompatible.');
 
-define('ERR_DB_UPDATE', 'Ha ocurrido un error al tratar de actualizar la tabla "%s".');
-define('ERR_DB_INSERT', 'Ha ocurrido un error al tratar de insertar datos en la tabla "%s".');
-define('ERR_DB_DELETE', 'Ha ocurrido un error al tratar de eliminar datos en la tabla "%s".');
+define('ERR_DB_UPDATE', 'Ha ocurrido un error al tratar de actualizar los datos.');
+define('ERR_DB_INSERT', 'Ha ocurrido un error al tratar de insertar los datos.');
+define('ERR_DB_DELETE', 'Ha ocurrido un error al tratar de eliminar los datos.');
 
 /*
 |--------------------------------------------------------------------------
 | EMAIL FORMULARIO CONSULTA DE LA PROP
 |--------------------------------------------------------------------------
 */
-$msg = array();
-$msg['propname'] = "<b>Propiedad:</b> %s<br /><br />";
-$msg['name'] = "<b>Nombre:</b> %s<br /><br />";
-$msg['phone'] = "<b>Telefono:</b> %s<br /><br />";
-$msg['llegada'] = "<b>Llegada:</b> %s<br /><br />";
-$msg['salida'] = "<b>Salida:</b> %s<br /><br />";
-$msg['adultos'] = "<b>Adultos:</b> %s<br /><br />";
-$msg['ninios'] = "<b>Ni&ntilde;os:</b> %s<br /><br />";
-$msg['consult'] = '<b>Consulta:</b><hr color="#000000" />%s';
-
-define('EMAIL_CONSULTPROP_SUBJECT', 'AlquileresTemporarios.org - Consulta Propiedad');
-define('EMAIL_CONSULTPROP_MESSAGE', serialize($msg));
+$msg = '<b>Name:</b> %s<br /><br />';
+$msg.= '<b>E-mail:</b> %s<br /><br />';
+$msg.= '<b>Message:</b><hr color="#000000" />%s';
+define('EMAIL_CONTACT_SUBJECT', 'Contact Form');
+define('EMAIL_CONTACT_MESSAGE', $msg);
 
 /*
 |--------------------------------------------------------------------------
@@ -87,8 +81,8 @@ define('UPLOAD_DIR_WATERMARK', './images/logo_watermark1.png');
 define('UPLOAD_FILETYPE', 'gif|jpg|png');
 define('UPLOAD_MAXSIZE', 2048); //Expresado en Kylobytes
 
-define('IMAGE_THUMB_WIDTH', 115);
-define('IMAGE_THUMB_HEIGHT', 90);
+define('IMAGE_THUMB_WIDTH', 270);
+define('IMAGE_THUMB_HEIGHT', 146);
 define('IMAGE_ORIGINAL_WIDTH', 800);
 define('IMAGE_ORIGINAL_HEIGHT', 600);
 

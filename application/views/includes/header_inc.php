@@ -1,7 +1,7 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');?>
 
 <div id="head">
-    <!-- logo --><h1 id="logo"><a href="index.html">Logo</a></h1>
+    <!-- logo --><h1 id="logo"><a href="<?=$this->config->item('base_url');?>">Logo</a></h1>
 
     <!-- Main menu -->
     <?php $seg = $this->uri->segment(1);?>

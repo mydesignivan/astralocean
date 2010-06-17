@@ -14,6 +14,8 @@ body {
 .right { float: right; }
 .clear { clear: both; }
 .spacer { padding-bottom: 20px; }
+.text-center{text-align: center !important;}
+.hide{display: none;}
 
 /* General text */
 small {
@@ -30,6 +32,25 @@ p {
 .content p {
 	padding: 7px 0;
 	font-size: .8em;
+}
+
+.error{
+    clear: both;
+    background: #FBE3E4;
+    color: #8a1f11;
+    border-color: #FBC2C4;
+    padding:5px;
+    text-align: center;
+    margin-top:10px;
+}
+.success{
+    clear: both;
+    background: #E6EFC2;
+    color: #264409;
+    border-color: #C6D880;
+    padding:5px;
+    text-align: center;
+    margin-top:10px;
 }
 
 /* Quotes */
@@ -60,6 +81,26 @@ a {
 a:hover {
 	text-decoration: underline;
 }
+
+a.link-icon{
+    text-decoration: none;
+}
+    a.link-icon img{
+        margin-right: 5px;        
+    }
+    a.link-icon span:hover{
+        text-decoration: underline;        
+    }
+
+a.link1{
+    font-size: 90%;
+    color:#304885;
+    text-decoration: none;
+}
+    a.link1:hover{
+        text-decoration: underline;        
+    }
+
 
 /* Layout Styles */
 img.framed {
@@ -165,17 +206,17 @@ h6 {
 
 /* Tables */
 table {
-	padding: 10px 0;
-	color: #848484;
+    padding: 10px 0;
+    color: #848484;
 }
 td {
-	padding: 17px 7px;
-	border-bottom: 1px solid #e2e2e2;
-	font-size: .8em;
-	text-align: center;
+    padding: 4px 7px;
+    border-bottom: 1px solid #e2e2e2;
+    font-size: .8em;
+    text-align: left;
 }
 tr.table-header {
-	background: url(../images/shade.gif) repeat-x center;
+    background: url(../images/shade.gif) repeat-x center;
 }
 tr.table-header h5 {
 	padding: 10px 0;
@@ -190,30 +231,30 @@ th {
 
 /* Layout */
 #wrapper {
-	width: 960px;
-	margin: 0 auto;
-	position: relative;
+    width: 960px;
+    margin: 0 auto;
+    position: relative;
 }
 	#head {
-		position: relative;
-		height: 129px;
+            position: relative;
+            height: 129px;
 	}
 		/* Logo */
 		#head h1#logo, #header h1#logo a { 
-			display: block;
-			height: 46px;
-			width: 232px;
+                    display: block;
+                    height: 46px;
+                    width: 232px;
 		}
 		#head h1#logo { 
-			background: url(../images/logo1.png) no-repeat;
-			border: none;
-			height: 206px;
-			left: 0px;
-			margin: 0;
-			padding: 0;
-			position: absolute;
-			text-indent: -999em;
-			top: 24px;
+                    background: url(../images/logo1.png) no-repeat;
+                    border: none;
+                    height: 206px;
+                    left: 0px;
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    text-indent: -999em;
+                    top: 24px;
 		}
 		/* Navigation */
 		ul#navigation {
@@ -326,7 +367,14 @@ th {
 		font-size: .9em;
 		color: #919191;
 	}
-		.info-strip h3 {
+	.info-strip2 {
+		width:940px;
+		min-height: 140px;
+		padding: 0 10px 25px 10px;
+		font-size: .9em;
+		color: #919191;
+	}
+		.info-strip h3, .info-strip2 h3 {
 			font-size: 1.2em;
 			padding-bottom: 5px;
 		}
@@ -405,3 +453,76 @@ th {
 	}
 		#footer p { float: left; }
 		#footer span { float: right; }
+
+
+/**** LOGIN ****/
+.login{
+    width:300px;
+    margin: 80px auto;
+    padding:10px;
+    border:2px solid #ccc;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+    .login label{
+        float:left;
+        width:80px;
+        text-align: right;
+        margin-right: 5px;
+    }
+    .login input[type=text], .login input[type=password]{
+        float:left;
+        width:150px;
+        margin-top:8px;
+    }
+    .login input[type=submit]{
+        font-size: 100%;
+        margin-left:94px;
+    }
+    .login .error{
+        clear: both;
+        background: #FBE3E4;
+        color: #8a1f11;
+        border-color: #FBC2C4;
+        padding:5px;
+        text-align: center;
+        margin-top:10px;
+    }
+
+/**** MY ACCOUNT ****/
+.myaccount-col{
+    float:left;
+    width: 400px;
+    /*border:1px solid red;*/
+}
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA TABLA (products)
+ -----------------------------------------------------------------------------*/
+.tbl-products{
+    width:960px;
+}
+    .tbl-products .cell1{
+        width: 450px;
+        vertical-align: middle !important;
+        /*border:1px solid #000;*/
+    }
+    .tbl-products .cell2{
+        width: 100px;
+        text-align: center;
+        vertical-align: middle;
+        /*border:1px solid #000;*/
+    }
+    .tbl-products .cell3{
+        width: 100px;
+        text-align: center;
+        vertical-align: middle;
+        /*border:1px solid #000;*/
+    }
+    .tbl-products .cell4{
+        width: 100px;
+        text-align: center;
+        vertical-align: middle;
+        /*border:1px solid #000;*/
+    }
+
