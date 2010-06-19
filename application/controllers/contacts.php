@@ -6,6 +6,7 @@ class Contacts extends Controller {
     function __construct(){
         parent::Controller();
 
+        $this->load->model('users_model');
         $this->load->library('dataview', array(
             'tlp_section'          =>  'frontpage/contacts_view.php',
             'tlp_title'            =>  TITLE_CONTACT,
@@ -23,13 +24,15 @@ class Contacts extends Controller {
     /* PUBLIC FUNCTIONS
      **************************************************************************/
     public function index(){
+        $this->_data = $this->dataview->set_data(array(
+            'info'  =>  $this->users_model->get_info()
+        ));
         $this->load->view('template_frontpage_view', $this->_data);
     }
 
     public function send(){
         if( $_SERVER['REQUEST_METHOD']=="POST" ){
             $this->load->library('email');
-            $this->load->model('users_model');
 
             $message = sprintf(EMAIL_CONTACT_MESSAGE,
                 $_POST['txtName'],

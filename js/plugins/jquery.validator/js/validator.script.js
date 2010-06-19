@@ -151,14 +151,14 @@ var ClassValidator = function(param1, param2){
         show_alert      :       false                // [BOOLEAN]
     };
     var MESSAGE = {
-        required	:	'Este campo es obligatorio.',
-        email		:	'El email ingresado es incorrecto.',
-        string		:	'Debe contener solo caracteres alfab&eacute;ticos.',
+        required	:	'Required Field..',
+        email		:	'The email you entered is incorrect.',
+        string		:	'Must contain only alphabetic characters.',
         numeric		:	'Debe contener solo caracteres num&eacute;ricos.',
         date		:	'El formato de la fecha es incorrecto.',
-        password	:	'El password debe tener entre %min y %max caracteres, por lo menos un d&iacute;gito y un alfanum&eacute;rico, y no  puede contener caracteres espaciales.',
-        user        	:	'El usuario debe tener entre %min y %max caracteres, debe ser en minuscula y no puede contener caracteres espaciales.',
-        compare		:	'El password y la confirmaci&oacute;n no coinciden.',
+        password	:	'The password must be between %min and %max characters, at least one digit and alphanumeric characters and can not contain space.',
+        user        	:	'The user must be between %min and %max characters, must be lowercase and not contain space characters.',
+        compare		:	'The password and confirmation do not match.',
         custom		:	''
     };
     var This=this;

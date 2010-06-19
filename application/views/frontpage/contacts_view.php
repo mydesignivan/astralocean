@@ -15,7 +15,7 @@ Nam ornare. Vivamus dolor metus, condimentum ac, iaculis non.</p>            -->
             <div class="error">Error in sending email</div>
         <?php }?>
             
-            <form id="form1" method="post" action="<?=site_url('/contacts/send/')?>" enctype="application/x-www-form-urlencoded">
+        <form id="form1" method="post" action="<?=site_url('/contacts/send/')?>" enctype="application/x-www-form-urlencoded">
             <fieldset>
                 <div class="left">
                     <label>Your name..</label>
@@ -32,7 +32,7 @@ Nam ornare. Vivamus dolor metus, condimentum ac, iaculis non.</p>            -->
                     <textarea name="txtConsult" id="txtConsult" cols="40" rows="5" class="left validator"></textarea><br/>
                 </div>
             </fieldset>
-            <button type="button" name="submit" class="submit" onclick="Contact.send();">Send it!</button>
+            <button type="button" class="submit" onclick="Contact.send();">Send it!</button>
         </form>
 
         <script type="text/javascript">
@@ -48,9 +48,28 @@ Nam ornare. Vivamus dolor metus, condimentum ac, iaculis non.</p>            -->
 <!-- start: right-column -->
 
 <div class="rounded-box">
+    <!--<div class="inner content">
+        <h6>E-mail: <a href="mailto:info@astralocean.net">info@astralocean.net</a></h6>
+    </div>-->
+
+
+<?php if( !empty($info['email']) ) {?>
     <div class="inner content">
-        <h6>E-mail: <a href="#">info@astralocean.net</a></h6>
+        <h6>E-mail: <a href="mailto:<?=$info['email']?>"><?=$info['email']?></a></h6>
     </div>
+<?php }?>
+<?php if( !empty($info['phone']) ) {?>
+    <div class="inner content">
+        <h6>Phone: <?=$info['phone']?></h6>
+    </div>
+<?php }?>
+<?php if( !empty($info['fax']) ) {?>
+    <div class="inner content">
+        <h6>Fax: <?=$info['fax']?></h6>
+    </div>
+<?php }?>
+
+
     <div class="box-end"></div><!-- corners -->
 </div>
 

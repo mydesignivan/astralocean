@@ -13,7 +13,7 @@
     congue eleifend. Suspendisse potenti. Ut in erat mi.
     </blockquote>
 
-    <h3>The Process</h3>
+    <!--<h3>The Process</h3>
     <p>Vivamus tincidunt ultrices risus, quis rhoncus eros lacinia ut. Curabitur
 felis nulla, <strong>pretium</strong> et commodo eu, pharetra id orci. Quisque faucibus eros
 eu tortor <a href="#">facilisis at suscipit</a> nulla semper. Mauris tortor eros, tempor a
@@ -34,12 +34,12 @@ eget, faucibus at risus.</p>
         <li>Lorem ipsum dolor sit amet</li>
         <li>Consectetur adipiscing elit</li>
         <li>Suspendisse potenti. Ut in erat mi.</li>
-    </ul>
+    </ul>-->
 </div>
 <!-- end: left-column -->
 
 <!-- start: right-column -->
-<div class="rounded-box">
+<!--<div class="rounded-box">
     <div class="inner content">
         <h6>Subsections</h6>
         <ol>
@@ -48,7 +48,7 @@ eget, faucibus at risus.</p>
             <li><a href="#">Subsection #3</a></li>
         </ol>
     </div>
-    <div class="box-end"></div><!-- corners -->
+    <div class="box-end"></div>
 </div>
 
 <div class="rounded-box">
@@ -56,6 +56,6 @@ eget, faucibus at risus.</p>
         <h6>Get in Touch!</h6>
         <p>Got any question? <a href="contact-us.html">Drop us a line!</a></p>
     </div>
-    <div class="box-end"></div><!-- corners -->
-</div>
+    <div class="box-end"></div>
+</div>-->
 <!-- end: right-column -->

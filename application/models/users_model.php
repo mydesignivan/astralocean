@@ -11,7 +11,8 @@ class Users_model extends Model {
     /* PUBLIC FUNCTIONS
      **************************************************************************/
     public function get_info() {
-        $data = $this->db->get_where(TBL_USERS, array('user_id'=>$this->session->userdata('user_id')))->row_array();
+        //$data = $this->db->get_where(TBL_USERS, array('user_id'=>$this->session->userdata('user_id')))->row_array();
+        $data = $this->db->get_where(TBL_USERS)->row_array();
         return $data;
     }
 
