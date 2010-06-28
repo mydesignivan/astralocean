@@ -10,7 +10,7 @@ class Products_model extends Model {
     /* PUBLIC FUNCTIONS
      **************************************************************************/
     public function get_list($limit, $offset) {
-        $sql = 'product_id, productname, image, image_thumb';
+        $sql = 'product_id, productname, image, image_thumb, order';
         $ret = array();
 
         $this->db->select($sql);
@@ -84,6 +84,22 @@ class Products_model extends Model {
             @unlink(UPLOAD_DIR.$part['basename']."_thumb.".$part['ext']);
 
         }else return false;
+
+        return true;
+    }
+
+    public function order($post){
+        //print_array($post, true);
+
+        $order = $post['initorder'];
+
+        for( $n=1; $n<= count($post['tblList'])-1; $n++ ){
+            $arr = explode("_", substr($post['tblList'][$n], 2));
+
+            $this->db->where('product_id', $arr[1]);
+            if( !$this->db->update(TBL_PRODUCTS, array('order'=>$order)) ) return false;
+            $order++;
+        }
 
         return true;
     }

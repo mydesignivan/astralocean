@@ -10,10 +10,15 @@ function show_error(el, msg, container){
     catch(e){}
 }
 
+function AlternatedRowColors(){
+    $("#tblList tr:even").css("background-color", "#F7F7F7");
+    $("#tblList tr:odd").css("background-color", "#ffffff");
+}
+
 $(document).ready(function() {
 
-	/*------- Alternated row Colors -------*/
-	$("tr:even").css("background-color", "#F7F7F7");
+    /*------- Alternated row Colors -------*/
+    AlternatedRowColors();
 
 	/*------- Hiding Portfolio Labels -------*/
     $(".folio-box .inner").hover(

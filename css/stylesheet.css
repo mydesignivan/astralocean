@@ -239,6 +239,12 @@ th {
             position: relative;
             height: 129px;
 	}
+            #head .link-bp{
+                float: right;
+                position: relative;
+                top:35px;
+                font-size: 80%;
+            }
 		/* Logo */
 		#head h1#logo, #header h1#logo a { 
                     display: block;

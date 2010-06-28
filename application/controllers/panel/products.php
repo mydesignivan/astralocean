@@ -10,8 +10,7 @@ class Products extends Controller {
         $this->load->library("simplelogin");
         $this->load->library('dataview', array(
             'tlp_section'  =>  'paneladmin/products_view.php',
-            'tlp_title'    =>  TITLE_INDEX,
-            'tlp_script'   =>  'products'
+            'tlp_title'    =>  TITLE_INDEX
         ));
         $this->_data = $this->dataview->get_data();
 
@@ -42,6 +41,7 @@ class Products extends Controller {
         $this->pagination->initialize($config);
 
         $this->_data = $this->dataview->set_data(array(
+            'tlp_script'    =>  array('tablesorter', 'products_list'),
             'listProducts'  =>  $listProducts['result']
         ));
         $this->load->view('template_paneladmin_view', $this->_data);
@@ -54,13 +54,13 @@ class Products extends Controller {
             $this->_data = $this->dataview->set_data(array(
                 'tlp_section'  =>  'paneladmin/products_form_view.php',
                 'info'         =>  $this->products_model->get_info($id),
-                'tlp_script'   =>  array('fancybox', 'validator', 'products')
+                'tlp_script'   =>  array('fancybox', 'validator', 'products_form')
             ));
 
         }else{    // New
             $this->_data = $this->dataview->set_data(array(
                 'tlp_section'  =>  'paneladmin/products_form_view.php',
-                'tlp_script'   =>  array('validator', 'products')
+                'tlp_script'   =>  array('validator', 'products_form')
             ));
         }
 
@@ -117,6 +117,12 @@ class Products extends Controller {
 
     /* AJAX FUNCTIONS
      **************************************************************************/
+    public function ajax_order(){
+        echo $this->products_model->order($_POST) ? "ok" : "error";
+        die();
+    }
+
+
 
     /* PRIVATE FUNCTIONS
      **************************************************************************/
