@@ -65,7 +65,5 @@
 
 <div class="info-strip right">
         <h3>Facilities</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-        vel ante id erat faucibus auctor. <br />Aliquam blandit tellus sed quam euismod
-         hendrerit. In hac habitasse platea dictumst.</p>
+        <p>Using state-of-the-art industry technology for catching and processing, we export worldwide  superb quality frozen fish products every year.</p>
 </div>

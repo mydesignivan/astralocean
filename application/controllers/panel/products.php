@@ -6,6 +6,8 @@ class Products extends Controller {
     function __construct(){
         parent::Controller();
 
+        if( !$this->session->userdata('logged_in') ) redirect($this->config->item('base_url'));
+
         $this->load->model('products_model');
         $this->load->library("simplelogin");
         $this->load->library('dataview', array(

@@ -64,6 +64,7 @@ class Products_model extends Model {
             $data['image_thumb'] = $part['basename']."_thumb.".$part['ext'];
         }
 
+        $this->db->where('product_id', $id);
         if( !$this->db->update(TBL_PRODUCTS, $data) ) {
             return array(
                 'status'    =>  'error',

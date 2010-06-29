@@ -5,7 +5,11 @@
 
     <!-- Main menu -->
     <?php $seg = $this->uri->segment(1);?>
+
+    <?php if( $this->session->userdata('logged_in') ) {?>
     <a href="<?=site_url('/panel/')?>" class="link-bp">Back to Panel</a>
+    <?php }?>
+    
     <ul id="navigation">
         <li <?php if( $seg=="index" || $seg=="" ) echo 'class="highlighted"';?>><a href="<?=$this->config->item('base_url');?>">Home</a></li>
         <li <?php if( $seg=="ourcompany" ) echo 'class="highlighted"';?>><a href="<?=site_url('/ourcompany/');?>">Our Company</a></li>
