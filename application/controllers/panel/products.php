@@ -19,7 +19,7 @@ class Products extends Controller {
         $this->_count_per_page=10;
         $uri = $this->uri->uri_to_assoc(2);
         $this->_offset = !isset($uri['page']) ? 0 : $uri['page'];
-}
+    }
 
     /* PRIVATE PROPERTIES
      **************************************************************************/
@@ -52,17 +52,19 @@ class Products extends Controller {
     public function form(){
         $id = $this->uri->segment(4);
 
+        $tlp_script = array('fancybox', 'validator', 'tinymce', 'products_form');
+
         if( $id ){  // Edit
             $this->_data = $this->dataview->set_data(array(
                 'tlp_section'  =>  'paneladmin/products_form_view.php',
                 'info'         =>  $this->products_model->get_info($id),
-                'tlp_script'   =>  array('fancybox', 'validator', 'products_form')
+                'tlp_script'   =>  $tlp_script
             ));
 
         }else{    // New
             $this->_data = $this->dataview->set_data(array(
                 'tlp_section'  =>  'paneladmin/products_form_view.php',
-                'tlp_script'   =>  array('validator', 'products_form')
+                'tlp_script'   =>  $tlp_script
             ));
         }
 

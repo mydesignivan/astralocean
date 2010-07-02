@@ -37,8 +37,6 @@ var Account = new function(){
                     else $('#form1').submit();
                 });
 
-                $('#form1').submit();
-
             }else $('#imgAL').hide();
 
             return false;
