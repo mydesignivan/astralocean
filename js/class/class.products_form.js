@@ -64,13 +64,13 @@ var Products = new function(){
     };
 
     this.save = function(){
-        $('#imgAL').show();
+        $('.jq-ajaxloader').show();
             
         $.validator.validate('#form1 .validator', function(error){
             if( !error && valid_others_fields() ){
                 $('#form1').submit();
                 
-            }else $('#imgAL').hide();
+            }else $('.jq-ajaxloader').hide();
         });
     };
 
@@ -78,76 +78,6 @@ var Products = new function(){
         if( confirm('¿Confirm delete?') ){
             location.href = baseURI+'panel/products/delete/'+id;
         }
-    };
-
-    this.order = {
-        up : function(el){
-            if( working ) return false;
-
-            var tr = $(el).parent().parent()[0];
-            var table = $('#tblList');
-            
-            var row = $(table[0].rows[tr.rowIndex]);
-            var rowNew = $(table[0].rows[tr.rowIndex-1]);
-
-
-            var dat = get_data(row);
-            var dat2 = get_data(rowNew);
-
-            var param = {
-                order2 : dat2.order,
-                id2    : dat.id,
-
-                order1 : dat.order,
-                id1    : dat2.id
-            };
-
-            if( tr.rowIndex >1 ){
-                working = true;
-                $.post(baseURI+'panel/products/ajax_order', param, function(data){
-                    if( data=="ok" ){
-                        row.replaceWith('<tr id="'+rowNew.attr('id')+'">'+rowNew.html()+'</tr>' );
-                        rowNew.replaceWith('<tr id="'+row.attr('id')+'">'+row.html()+'</tr>' );
-                    }
-                    working = false;
-                });
-            }
-            return false;
-        },
-
-        down : function(el){
-            if( working ) return false;
-
-            var tr = $(el).parent().parent()[0];
-            var table = $('#tblList');
-
-            if( tr.rowIndex < table[0].rows.length-1 ){
-                var row = $(table[0].rows[tr.rowIndex]);
-                var rowNew = $(table[0].rows[tr.rowIndex+1]);
-
-                var dat = get_data(row);
-                var dat2 = get_data(rowNew);
-                
-                var param = {
-                    order1 : dat2.order,
-                    id1    : dat.id,
-
-                    order2 : dat.order,
-                    id2    : dat2.id
-                };
-
-                working = true;
-                /*$.post(baseURI+'panel/products/ajax_order', param, function(data){
-                    if( data=="ok" ){*/
-                        row.replaceWith('<tr id="tr'+param.order2+'_'+param.id2+'">'+rowNew.html()+'</tr>' );
-                        rowNew.replaceWith('<tr id="tr'+param.order1+'_'+param.id1+'">'+row.html()+'</tr>' );
-                    /*}
-                    working = false;
-                });*/
-            }
-            return false;
-        }
-
     };
 
 
@@ -166,10 +96,20 @@ var Products = new function(){
             return false;
         }else $.validator.hide('#txtPssVeri');
 
-        if( tinyMCE.get('txtContent').getContent().length==0 ){
-            show_error('#msgbox-content', 'Required Field.', '#msgbox-content');
+        if( tinyMCE.get('txtContent_about').getContent().length==0 ){
+            show_error('#msgbox-content1', 'Required Field.', '#msgbox-content1');
             return false;
-        }else $.validator.hide('#txtContent');
+        }else $.validator.hide('#msgbox-content');
+
+        if( tinyMCE.get('txtContent_productcharacteristics').getContent().length==0 ){
+            show_error('#msgbox-content2', 'Required Field.', '#msgbox-content2');
+            return false;
+        }else $.validator.hide('#msgbox-content2');
+
+        if( tinyMCE.get('txtContent_freezingmethods').getContent().length==0 ){
+            show_error('#msgbox-content3', 'Required Field.', '#msgbox-content3');
+            return false;
+        }else $.validator.hide('#msgbox-content3');
 
         return true;
     }

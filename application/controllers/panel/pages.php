@@ -7,8 +7,8 @@ class Pages extends Controller {
         parent::Controller();
 
         if( !$this->session->userdata('logged_in') ) redirect($this->config->item('base_url'));
-        
-        $this->load->library("simplelogin");
+
+        $this->load->model('pages_model');
         $this->load->library('dataview', array(
             'tlp_section'          =>  'paneladmin/pages_view.php',
             'tlp_title'            =>  TITLE_INDEX
@@ -28,6 +28,12 @@ class Pages extends Controller {
             //'info'  =>  $this->users_model->get_info()
         ));
         $this->load->view('template_paneladmin_view', $this->_data);
+    }
+
+    public function update(){
+        if( $_SERVER['REQUEST_METHOD']=="POST" ){
+            die($this->pages_model->update() ? "ok" : "error");
+        }
     }
 
 

@@ -5,6 +5,10 @@
     <div class="error"><?=$this->session->flashdata('msgerror')?></div>
 <?php }?>
 
+<div class="clear">
+    <button type="button" class="submit" onclick="Products.save();">Save</button>
+    &nbsp;<img src="images/ajax-loader2.gif" alt="Loading" width="32" height="32" style="position:relative; top:10px; display: none;" class="jq-ajaxloader" />
+</div>
 <form id="form1" method="post" action="<?=site_url('/panel/products/'. (!isset($info) ? "create" : "edit"));?>" enctype="multipart/form-data">
     <fieldset>
         <div class="left">
@@ -24,15 +28,29 @@
         </div>
 
         <div class="clear left">
-            <label>Content (*)</label>
-            <textarea id="txtContent" name="txtContent" rows="5" cols="20" class="left"><?=@$info['content'];?></textarea>
-            <div id="msgbox-content" class="left clear" style="margin-top:10px;"></div>
+            <label>About</label>
+            <textarea id="txtContent_about" name="txtContent_about" rows="5" cols="20" class="left"><?=@$info['content_about'];?></textarea>
+            <div id="msgbox-content1" class="left clear" style="margin-top:10px;"></div>
         </div>
+
+        <div class="clear left">
+            <label>Product Characteristics</label>
+            <textarea id="txtContent_productcharacteristics" name="txtContent_productcharacteristics" rows="5" cols="20" class="left"><?=@$info['content_productcharacteristics'];?></textarea>
+            <div id="msgbox-content2" class="left clear" style="margin-top:10px;"></div>
+        </div>
+
+        <div class="clear left">
+            <label>Freezing Methods</label>
+            <textarea id="txtContent_freezingmethods" name="txtContent_freezingmethods" rows="5" cols="20" class="left"><?=@$info['content_freezingmethods'];?></textarea>
+            <div id="msgbox-content3" class="left clear" style="margin-top:10px;"></div>
+        </div>
+
+
     </fieldset>
 
     <div class="clear">
         <button type="button" class="submit" onclick="Products.save();">Save</button>
-        &nbsp;<img id="imgAL" src="images/ajax-loader2.gif" alt="Loading" width="32" height="32" style="position:relative; top:10px; display: none;" />
+        &nbsp;<img src="images/ajax-loader2.gif" alt="Loading" width="32" height="32" style="position:relative; top:10px; display: none;" class="jq-ajaxloader" />
     </div>
 
     <input type="hidden" name="product_id" value="<?=@$info['product_id']?>" />

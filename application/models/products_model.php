@@ -32,8 +32,10 @@ class Products_model extends Model {
         $part = part_filename($filename);
 
         $data = array(
-            'productname' => $_POST['txtProductName'],
-            'content'     => $_POST['txtContent'],
+            'productname'   => $_POST['txtProductName'],
+            'content_about'                  => $_POST['txtContent_about'],
+            'content_productcharacteristics' => $_POST['txtContent_productcharacteristics'],
+            'content_freezingmethods'        => $_POST['txtContent_freezingmethods'],
             'date_added'  => date('Y-m-d H:i:s'),
             'image'       => $filename,
             'image_thumb' => $part['basename']."_thumb.".$part['ext']
@@ -54,7 +56,9 @@ class Products_model extends Model {
     public function edit($id, $filename){
         $data = array(
             'productname'   => $_POST['txtProductName'],
-            'content'       => $_POST['txtContent'],
+            'content_about'                  => $_POST['txtContent_about'],
+            'content_productcharacteristics' => $_POST['txtContent_productcharacteristics'],
+            'content_freezingmethods'        => $_POST['txtContent_freezingmethods'],
             'last_modified' => date('Y-m-d H:i:s')
         );
 
@@ -104,6 +108,9 @@ class Products_model extends Model {
 
         return true;
     }
+
+    /* PRIVATE FUNCTIONS
+     **************************************************************************/
 
 }
 ?>

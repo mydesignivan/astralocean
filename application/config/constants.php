@@ -44,6 +44,7 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',	'x+b');
 */
 define('TBL_USERS', 'users');
 define('TBL_PRODUCTS', 'products');
+define('TBL_PAGES', 'pages');
 
 
 /*

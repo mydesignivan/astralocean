@@ -46,22 +46,60 @@ var Pages = new function(){
         
     };
 
-    this.save = function(){
-        
+    this.save = function(el, id, pagename){
+        if( working ) return false;
+
+        var al = $(el).parent().find('.jq-ajaxloader').show();
+
+        var params={
+            'pagename' : pagename,
+            'content'  : tinyMCE.get(id).getContent()
+        };
+        working=true;
+        $.post(baseURI+'panel/pages/update', params, function(data){
+            al.hide();
+            working=false;
+            showmessage(data, el);
+        });
+
+        return false;
     };
 
-    this.slide = function(el){
-        $(el).parent().parent().next().slideDown('slow');
+    this.slideCont = function(el){
+        var div = $($(el).attr('href'));
+
+        if( div.is(':hidden') ){
+            div.slideDown('slow', function(){
+                $(el).parent().find('img.jq-icon').attr('src', 'images/icon_arrow_up2.png');
+            });
+
+        }else{
+            div.slideUp('slow', function(){
+                $(el).parent().find('img.jq-icon').attr('src', 'images/icon_arrow_down2.png');
+            });
+            div.find('.success, .error').hide();
+        }
+
+        return false;
     };
 
 
     /* PRIVATE PROPERTIES
      **************************************************************************/
-
+     var working=false;
+     var temp=false;
 
     /* PRIVATE METHODS
      **************************************************************************/
+     var showmessage = function(status, el){
+         var div = $(el).parent().parent().find(status=="ok" ? '.success' : '.error');
+         div.slideDown('slow');
+         clearInterval(temp);
+         temp = setTimeout(function(){
+            div.slideUp('slow');
+         }, 5000);
 
+     }
 
 
 };

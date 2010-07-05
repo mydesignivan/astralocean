@@ -537,6 +537,7 @@ th {
  -----------------------------------------------------------------------------*/
 .tbl-pages{
     width:960px;
+    font-size: 100% !important;
 }
     .tbl-pages .cell1{
         width: 800px;
@@ -544,4 +545,5 @@ th {
     }
     .tbl-pages .cell2{
         width: 100px;
+        vertical-align: top;
     }
