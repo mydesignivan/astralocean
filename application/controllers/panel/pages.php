@@ -32,7 +32,7 @@ class Pages extends Controller {
 
     public function update(){
         if( $_SERVER['REQUEST_METHOD']=="POST" ){
-            die($this->pages_model->update() ? "ok" : "error");
+            die($this->pages_model->save() ? "ok" : "error");
         }
     }
 

@@ -11,7 +11,7 @@
 <!-- start: portfolio boxes -->
 <div class="folio-box">
     <div class="inner">
-        <a class="jfancy" href="images/portfolio/full/showcase_1.jpg"><img src="images/portfolio/aleta_sin_piel_mas_cargas.jpg" alt="" /></a>
+        <a href=""><img src="images/pescados/hake.jpg" alt="" width="100" /></a>
         <div class="proj-label">Aleta sin piel</div><!-- project label -->
     </div>
     <div class="box-end"></div><!-- corners -->

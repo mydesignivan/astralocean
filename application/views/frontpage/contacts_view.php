@@ -53,22 +53,40 @@ Nam ornare. Vivamus dolor metus, condimentum ac, iaculis non.</p>            -->
     </div>-->
 
 
-<?php if( !empty($info['email']) ) {?>
+<?php if( !empty($info['skype']) ) {?>
     <div class="inner content">
-        <h6>E-mail: <a href="mailto:<?=$info['email']?>"><?=$info['email']?></a></h6>
+        <h6>Skype: <?=$info['skype']?></h6>
     </div>
 <?php }?>
-<?php if( !empty($info['phone']) ) {?>
+<?php if( !empty($info['commerdiv_email']) ) {?>
     <div class="inner content">
-        <h6>Phone: <?=$info['phone']?></h6>
+        <h3 class="title1">Commercial Division</h3>
+        <h6>E-mail: <a href="mailto:<?=$info['commerdiv_email']?>"><?=$info['commerdiv_email']?></a></h6>
     </div>
 <?php }?>
-<?php if( !empty($info['fax']) ) {?>
+<?php if( !empty($info['commerdivar_phone']) ) {?>
     <div class="inner content">
-        <h6>Fax: <?=$info['fax']?></h6>
+        <h3 class="title1">Commercial Division: ARGENTINA</h3>
+        <h6>Phone: <?=nl2br($info['commerdivar_phone'])?></h6>
     </div>
 <?php }?>
-
+<?php if( !empty($info['commerdives_phone']) ) {?>
+    <div class="inner content">
+        <h3 class="title1">Commercial Division: ESPA&Ntilde;A</h3>
+        <h6>Phone: <?=nl2br($info['commerdives_phone'])?></h6>
+    </div>
+<?php }?>
+<?php if( !empty($info['prodplan_phone']) ) {?>
+    <div class="inner content">
+        <h3 class="title1">Prduction and Planning</h3>
+        <h6>Phone: <?=nl2br($info['prodplan_phone'])?></h6>
+    </div>
+<?php }?>
+<?php if( !empty($info['prodplan_email']) ) {?>
+    <div class="inner content">
+        <h6>E-mail: <a href="mailto:<?=$info['prodplan_email']?>"><?=$info['prodplan_email']?></a></h6>
+    </div>
+<?php }?>
 
     <div class="box-end"></div><!-- corners -->
 </div>

@@ -19,10 +19,14 @@ class Users_model extends Model {
     public function save(){
         $this->db->where('user_id', $this->session->userdata('user_id'));
         $data = array(
-            'email'    => $_POST['txtEmail'],
-            'phone'    => $_POST['txtPhone'],
-            'fax'      => $_POST['txtFax'],
-            'username' => $_POST['txtUser']
+            'commerdiv_email'    => $_POST['txtCommerDivEmail'],
+            'commerdivar_phone'  => $_POST['txtCommerDivArPhone'],
+            'commerdives_phone'  => $_POST['txtCommerdivEsPhone'],
+            'prodplan_phone'     => $_POST['txtProdPlanPhone'],
+            'prodplan_email'     => $_POST['txtProdPlanEmail'],
+            'skype'              => $_POST['txtSkype'],
+            'username'           => $_POST['txtUser'],
+            'last_modified'      => date('Y-m-d H:i:s')
         );
 
         if( !empty($_POST['txtPssNew']) ){

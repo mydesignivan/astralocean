@@ -8,51 +8,65 @@
 <?php }?>
 
 <form id="form1" method="post" action="<?=site_url('/panel/myaccount/save/');?>">
-    <fieldset class="myaccount-col">
+    <fieldset class="fieldset-form myaccount-form">
+        <legend>Datos del Contacto</legend>
+
         <div class="left">
-            <label>Email (*)</label>
-            <input type="text" name="txtEmail" id="txtEmail" value="<?=$info['email'];?>" class="validator" />
-        </div>
+            <div class="row w1">
+                <label class="left">Skype</label>
+                <input type="text" name="txtSkype" value="<?=$info['skype'];?>" class="right" />
+            </div>
 
-        <div class="clear left">
-            <label>Phone</label>
-            <input type="text" name="txtPhone" value="<?=$info['phone'];?>" />
-        </div>
+            <div class="row w1">
+                <h6>Commercial Division</h6>
+                <label class="left">Email (*)</label>
+                <input type="text" name="txtCommerDivEmail" id="txtCommerDivEmail" value="<?=$info['commerdiv_email'];?>" class="right" />
+            </div>
 
-        <div class="clear left">
-            <label>Fax</label>
-            <input type="text" name="txtFax" value="<?=$info['fax'];?>" />
+            <div class="row w1">
+                <h6>Commercial Division ARGENTINA</h6>
+                <label class="left">Phone</label>
+                <textarea name="txtCommerDivArPhone" rows="22" cols="10" class="right textarea-small"><?=$info['commerdivar_phone'];?></textarea>
+            </div>
+        </div>
+        <div class="right">
+            <div class="row w1">
+                <h6>Commercial Division ESPA&Ntilde;A</h6>
+                <label class="left">Phone</label>
+                <textarea name="txtCommerdivEsPhone" rows="22" cols="10" class="right textarea-small"><?=$info['commerdives_phone'];?></textarea>
+            </div>
+
+            <div class="row w1">
+                <h6>Production and Planning</h6>
+                <label class="left">Phone</label>
+                <textarea name="txtProdPlanPhone" rows="22" cols="10" class="right textarea-small"><?=$info['prodplan_phone'];?></textarea>
+            </div>
+            <div class="row w1">
+                <label class="left">Email</label>
+                <input type="text" name="txtProdPlanEmail" value="<?=$info['prodplan_email'];?>" class="right" />
+            </div>
         </div>
     </fieldset>
 
-    <fieldset class="myaccount-col">
-        <div class="left">
-            <label>User (*)</label>
-            <input type="text" name="txtUser" id="txtUser" value="<?=$info['username'];?>" class="validator" />
+    <fieldset class="fieldset-form myaccount-form">
+        <legend>Datos del Usuario</legend>
+
+        <div class="row w2">
+            <label class="left">User (*)</label>
+            <input type="text" name="txtUser" id="txtUser" value="<?=$info['username'];?>" class="right validator" />
         </div>
-
-        <div id="divCont1" class="clear left">
-            <br />
-            <a href="javascript:void(Account.show_pss())" class="link1">Change Password</a>
+        <div class="row w2">
+            <label class="left">Current Password</label>
+            <input type="password" name="txtPssCurrent" id="txtPssCurrent" value="" class="right" />
         </div>
-
-        <div id="divCont2" class="clear left hide">
-            <div class="clear left">
-                <label>Current Password</label>
-                <input type="password" name="txtPssCurrent" id="txtPssCurrent" value="" />
-            </div>
-
-            <div class="clear left">
-                <label>New Password</label>
-                <input type="password" name="txtPssNew" id="txtPssNew" value="" class="validator" />
-            </div>
-
-            <div class="clear left">
-                <label>Repeat Password</label>
-                <input type="password" id="txtPssVeri" id="txtPssVeri" value="" class="validator" />
-            </div>
+        <div class="row w2">
+            <label class="left">New Password</label>
+            <input type="password" name="txtPssNew" id="txtPssNew" value="" class="right validator" />
         </div>
-
+        <div class="row w2">
+            <label class="left">Repeat Password</label>
+            <input type="password" id="txtPssVeri" id="txtPssVeri" value="" class="right validator" />
+        </div>
     </fieldset>
 
     <div class="clear">

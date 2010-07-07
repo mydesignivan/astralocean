@@ -150,6 +150,12 @@ input {
 	input.larger {
 		width: 400px;
 	}
+.textarea-small{
+    width: 210px;
+    height: 32px;
+    font-size: 80% !important;
+}
+
 .submit {
     border: none;
 	width: 120px;
@@ -227,6 +233,24 @@ th {
 	border-top: 1px solid #d4d4d4;
 	border-bottom: 1px solid #e2e2e2;
 	font-weight: bold;
+}
+h3.title1 {
+    font-size: 90% !important;
+    margin-left: 4px;
+    margin-bottom: 4px;
+}
+
+.image-ourcompany{
+    clear: both;
+    float: right;
+    position: relative;
+    width: 600px;
+    top: -230px;
+}
+.container-facilities{
+    clear: both;
+    width: 865px;
+    margin: 0 auto;
 }
 
 /* Layout */
@@ -328,7 +352,7 @@ th {
 			height: 8px;
 			background: url(../images/box-slice.gif) -970px 0 no-repeat;
 		}
-		#promo-box #slides-dock {
+		/*#promo-box #slides-dock {
 			width: 265px;
 			height: 187px;
 			background: url(../images/slides-dock.png) no-repeat;
@@ -351,7 +375,7 @@ th {
 				color: #FFF;
 				font-size: .9em;
 				cursor: default;
-			}
+			}*/
 		#promo-box .intro {
 			width: 125px;
 			padding: 15px;
@@ -363,6 +387,10 @@ th {
 				color: #808397;
 				font-size: 1.2em;
 				line-height: 1.7em;
+                                text-align: center;
+                                position: relative;
+                                width: 100%;
+                                float: left;
 			}
 		
 	/* Homepage infos */
@@ -406,6 +434,7 @@ th {
 			border-right: 1px solid #eee;
 			background: #F7F7F7;
 			padding: 0 6px;
+                        padding-bottom: 10px;
 		}
 		.rounded-box .box-end, .folio-box .box-end {
 			height: 8px;
@@ -496,11 +525,19 @@ th {
     }
 
 /**** MY ACCOUNT ****/
-.myaccount-col{
+.myaccount-form .row{
     float:left;
-    width: 400px;
+    clear: left;
+    margin-bottom: 10px;
     /*border:1px solid red;*/
 }
+.myaccount-form label{
+    margin: 2px 0 2px 0;
+}
+.myaccount-form .w1{width: 300px;}
+.myaccount-form .w2{width: 400px;}
+
+.myaccount-form .h1{height: 70px;}
 
 /*------------------------------------------------------------------------------
  - ESTILOS PARA TABLA (products)
@@ -547,3 +584,99 @@ th {
         width: 100px;
         vertical-align: top;
     }
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA FORMULARIOS
+ -----------------------------------------------------------------------------*/
+fieldset.fieldset-form{
+    float: left;
+    clear: both;
+    /*width: 940px;*/
+    width: 700px;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 20px;
+    border: 1px solid #AAABBD;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+}
+    fieldset.fieldset-form legend{
+        font-size: 90%;
+        font-weight: bold;
+        /*padding: 0 2px 0 2px;*/
+    }
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA EL HEADER
+ -----------------------------------------------------------------------------*/
+.header{
+    float:left;
+    width: inherit;
+    height: inherit;
+}
+    .header .column1{
+        float:left;
+        position: relative;
+        background: url(../images/header.png) no-repeat top left;
+        width: 533px;
+        height: 217px;
+        z-index: 10;
+    }
+    .header .column2{
+        position: absolute;
+        left:382px;
+        top:8px;
+        z-index: 9;
+    }
+        .header .column2 .slider{
+            float:left;
+            width: 571px;
+            height: 216px;
+            overflow: hidden;
+        }
+        .header .column2 .slide-label{
+            float:left;
+            clear:left;
+            background: url(../images/header_bottom.png) no-repeat;
+            position: relative;
+            width: 572px;
+            height: 32px;
+            top:-32px;
+            right: 1px;
+            z-index: 10;
+        }
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA GALERIA IMAGENES (GENERAL)
+ -----------------------------------------------------------------------------*/
+ul.gallery{
+    clear: both;
+    margin: 0;
+    padding: 0;
+}
+    ul.gallery li{
+        display: inline;
+        float: left;
+        list-style-type: none;
+        background-color: #E6E6E6;
+    }
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA GALERIA IMAGENES "Our Company"
+ -----------------------------------------------------------------------------*/
+ul.gallery-ourcompany{
+    float: right;
+}
+    ul.gallery-ourcompany li{
+        width: 110px;
+        height: 83px;
+        margin: 3px;
+    }
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA GALERIA IMAGENES "Facilities"
+ -----------------------------------------------------------------------------*/
+ul.gallery-facilities li{
+    width: 206px;
+    height: 157px;
+    margin: 5px;
+}

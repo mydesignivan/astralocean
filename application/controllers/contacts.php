@@ -43,7 +43,7 @@ class Contacts extends Controller {
             $userdata = $this->users_model->get_info();
 
             $this->email->from($_POST['txtEmail'], $_POST['txtName']);
-            $this->email->to($userdata['email']);
+            $this->email->to($userdata['prodplan_email']);
             $this->email->subject(EMAIL_CONTACT_SUBJECT);
             $this->email->message($message);
             if( $this->email->send() ){

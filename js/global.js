@@ -31,16 +31,16 @@ $(document).ready(function() {
     );
 
     /*------- Homepage Slides -------*/
-    if ($("#slides-dock").length > 0) {
-        $('#slides-dock').cycle({
+    if ($("#slider").length > 0) {
+        $('#slider').cycle({
                 fx: "fade",
                 slideExpr: "img",
 
                 before: function() {
-                        $("#slide-label").fadeOut();
+                        /*$("#slide-label").fadeOut();*/
                 },
                 after: function() {
-                        $("#slide-label").fadeIn().html(this.alt);
+                        /*$("#slide-label").fadeIn().html(this.alt);*/
                 }
         });
     }

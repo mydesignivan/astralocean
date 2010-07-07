@@ -3,9 +3,23 @@
 <!-- start: left-column -->
 <div id="left-column" class="content">
     <h1>Facilities</h1>
-    <!--<img class="framed" src="images/about-pic.jpg" alt="" />-->
 
-    <p>Using state-of-the-art industry technology for catching and processing, we export worldwide  superb quality frozen fish products every year.</p>
-
+    <?=nl2br($info['facilities']);?>
 </div>
 <!-- end: left-column -->
+
+<div class="container-facilities">
+    <ul class="gallery gallery-facilities">
+        <li><img src="images/facilities/imagen_1.jpg" alt="" width="206" height="157" /></li>
+        <li>&nbsp;</li>
+        <li><img src="images/facilities/imagen_2.jpg" alt="" width="206" height="157" /></li>
+        <li>&nbsp;</li>
+    </ul>
+    <ul class="gallery gallery-facilities">
+        <li><img src="images/facilities/imagen_3.jpg" alt="" width="206" height="157" /></li>
+        <li>&nbsp;</li>
+        <li><img src="images/facilities/imagen_4.jpg" alt="" width="206" height="157" /></li>
+        <li>&nbsp;</li>
+    </ul>
+</div>
+

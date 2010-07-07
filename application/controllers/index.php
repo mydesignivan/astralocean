@@ -6,6 +6,7 @@ class Index extends Controller {
     function __construct(){
         parent::Controller();
 
+        $this->load->model('pages_model');
         $this->load->library('dataview', array(
             'tlp_section'          =>  'frontpage/index_view.php',
             'tlp_title'            =>  TITLE_INDEX,
@@ -22,6 +23,12 @@ class Index extends Controller {
     /* PUBLIC FUNCTIONS
      **************************************************************************/
     public function index(){
+        $this->_data = $this->dataview->set_data(array(
+            'info' => array(
+                'ourcompany' => $this->pages_model->get_content('ourcompany'),
+                'facilities' => $this->pages_model->get_content('facilities')
+            )
+        ));
         $this->load->view('template_frontpage_view', $this->_data);
     }
 

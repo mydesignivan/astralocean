@@ -8,10 +8,6 @@ var Account = new function(){
             validateOne     : true
         });
 
-        $('#txtEmail').validator({
-            v_required  : true,
-            v_email     : true
-        });
         $('#txtUser').validator({
             v_required  : true
         });
@@ -30,12 +26,16 @@ var Account = new function(){
         $('#imgAL').show();
 
         $.validator.validate('#form1 .validator', function(error){
-            if( !error && validPss() ){                
-                $.post(baseURI+'panel/myaccount/ajax_check_pss', 'pss='+$('#txtPssCurrent').val(), function(data){
-                    $('#imgAL').hide();
-                    if( data!="ok" ) show_error('#txtPssCurrent', 'The password is incorrect.');
-                    else $('#form1').submit();
-                });
+            if( !error ){
+                if( $('#txtPssCurrent').val()!='' ){
+                    if( validPss() ){
+                        $.post(baseURI+'panel/myaccount/ajax_check_pss', 'pss='+$('#txtPssCurrent').val(), function(data){
+                            $('#imgAL').hide();
+                            if( data!="ok" ) show_error('#txtPssCurrent', 'The password is incorrect.');
+                            else $('#form1').submit();
+                        });
+                    }
+                }else $('#form1').submit();
 
             }else $('#imgAL').hide();
 
@@ -57,23 +57,15 @@ var Account = new function(){
     /* PRIVATE METHODS
      **************************************************************************/
     var validPss = function(){
-        if( $('#divCont2').is(':visible') ){
+        if( $('#txtPssNew').val().length==0 ){
+            show_error('#txtPssNew', 'Required Field.');
+            return false;
+        }else $.validator.hide('#txtPssNew');
+        if( $('#txtPssVeri').val().length==0 ){
+            show_error('#txtPssVeri', 'Required Field.');
+            return false;
+        }else $.validator.hide('#txtPssVeri');
 
-            if( $('#txtPssCurrent').val().length==0 ){
-                show_error('#txtPssCurrent', 'Required Field.');
-                return false;
-            }else $.validator.hide('#txtPssCurrent');
-
-            if( $('#txtPssNew').val().length==0 ){
-                show_error('#txtPssNew', 'Required Field.');
-                return false;
-            }else $.validator.hide('#txtPssNew');
-            if( $('#txtPssVeri').val().length==0 ){
-                show_error('#txtPssVeri', 'Required Field.');
-                return false;
-            }else $.validator.hide('#txtPssVeri');
-
-        }
         return true;
     }
 
