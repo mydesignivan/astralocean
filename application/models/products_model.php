@@ -30,9 +30,11 @@ class Products_model extends Model {
 
     public function create($filename){
         $part = part_filename($filename);
+        $reference = normalize($_POST['txtProductName']);
 
         $data = array(
             'productname'   => $_POST['txtProductName'],
+            'reference'     => $reference,
             'content_about'                  => $_POST['txtContent_about'],
             'content_productcharacteristics' => $_POST['txtContent_productcharacteristics'],
             'content_freezingmethods'        => $_POST['txtContent_freezingmethods'],

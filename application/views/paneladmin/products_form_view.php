@@ -9,7 +9,8 @@
     <button type="button" class="submit" onclick="Products.save();">Save</button>
     &nbsp;<img src="images/ajax-loader2.gif" alt="Loading" width="32" height="32" style="position:relative; top:10px; display: none;" class="jq-ajaxloader" />
 </div>
-<form id="form1" method="post" action="<?=site_url('/panel/products/'. (!isset($info) ? "create" : "edit"));?>" enctype="multipart/form-data">
+<!--<form id="form1" method="post" action="<?//=site_url('/panel/products/'. (!isset($info) ? "create" : "edit"));?>" enctype="multipart/form-data">-->
+<form id="form1" method="post" action="<?=site_url('/panel/products/'. (!isset($info) ? "create" : "edit"));?>">
     <fieldset>
         <div class="left">
             <label for="txtProduct">Product Name (*)</label>

@@ -73,20 +73,22 @@ class Products extends Controller {
     public function create(){
         if( $_SERVER['REQUEST_METHOD']=="POST" ){         
 
-            $res = $this->_upload();
-            $msgerror = "";
+            /*$res = $this->_upload();
 
             if( $res['status']=="ok" ){
                 $res = $this->products_model->create($this->_filename);
-
                 if( $res['status']=="error" ) $this->_delete_images($this->_filename);
+            }*/
 
-            }else $msgerror = $res['msgerror'];
+            //if( $res['status']=="error" ){
+                /*$this->session->set_flashdata('savestatus', $res['status']);
+                $this->session->set_flashdata('msgerror', @$res['msgerror']);*/
+            //}
 
-            $this->session->set_flashdata('savestatus', $res['status']);
-            $this->session->set_flashdata('msgerror', @$res['msgerror']);
+            $this->session->set_flashdata('savestatus', 'asdasd');
+            redirect('/panel/products/form/');
 
-            redirect($res['status']=="ok" ? '/panel/products/' : '/panel/products/form/');
+            //redirect($res['status']=="ok" ? '/panel/products/' : '/panel/products/form/');
         }
     }
 
@@ -94,7 +96,6 @@ class Products extends Controller {
         if( $_SERVER['REQUEST_METHOD']=="POST" ){
 
             $res = $this->_upload();
-            $msgerror="";
 
             if( $res['status']=="ok" ){
                 if( !empty($this->_file['tmp_name']) && $_POST['filename']!=$this->_filename ) $this->_delete_images($_POST['filename']);
@@ -102,11 +103,15 @@ class Products extends Controller {
                 $res = $this->products_model->edit($_POST['product_id'], $this->_filename);
 
                 if( $res['status']=="error" ) $this->_delete_images($this->_filename);
+            }
 
-            }else $msgerror = $res['msgerror'];
-
-            $this->session->set_flashdata('savestatus', $res['status']);
-            $this->session->set_flashdata('msgerror', @$res['msgerror']);
+            if( $res['status']=="error" ){
+                $this->session->set_userdata('savestatus', $res['status']);
+                $this->session->set_userdata('msgerror', @$res['msgerror']);
+            }else{
+                $this->session->set_userdata('savestatus', "");
+                $this->session->set_userdata('msgerror', "");
+            }
 
             redirect($res['status']=="ok" ? '/panel/products/' : '/panel/products/form/'.$_POST['product_id']);
         }
@@ -136,7 +141,7 @@ class Products extends Controller {
         $this->load->helper('form');
         $this->load->library('image_lib');
 
-        //Valida
+        //Aqui comienza la Validacion
         if( !is_uploaded_file($this->_file['tmp_name']) ) return array('status'=>'error', 'msgerror'=>ERR_UPLOAD_NOTUPLOAD);
         $size = (int)UPLOAD_MAXSIZE;
         if( round($this->_file['size']/1024, 2) > (int)UPLOAD_MAXSIZE ) {
@@ -144,8 +149,8 @@ class Products extends Controller {
         }
         if( !$this->_is_allowed_filetype() ) return array('status'=>'error', 'msgerror'=>ERR_UPLOAD_FILETYPE);
 
-        //Copia la imagen
-        $this->_filename = $filename = $this->_get_filename($id);
+        //Aqui comienza la etapa de upload
+        $this->_filename = $filename = $this->_get_filename();
 
         $ext = substr($filename, (strripos($filename, ".")-strlen($filename))+1);
         $basename = substr($filename, 0, strripos($filename, "."));
@@ -154,7 +159,7 @@ class Products extends Controller {
 
         move_uploaded_file($this->_file['tmp_name'], UPLOAD_DIR.$filename);
 
-        $sizes = getimagesize(UPLOAD_DIR_TMP.$filename);
+        $sizes = getimagesize(UPLOAD_DIR.$filename);
 
         // Crea una copia y dimensiona la imagen  (THUMB)
         $config = array();

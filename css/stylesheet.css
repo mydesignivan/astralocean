@@ -421,7 +421,7 @@ h3.title1 {
 	}
 	
 	.rounded-box, .folio-box {
-		width: 298px;
+		width: 220px;
 		background: url(../images/column-slice.gif) 0 0 no-repeat;
 		position: relative;
 		padding: 5px 0;		

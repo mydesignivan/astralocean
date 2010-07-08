@@ -77,8 +77,6 @@ define('EMAIL_CONTACT_MESSAGE', $msg);
 |--------------------------------------------------------------------------
 */
 define('UPLOAD_DIR', './uploads/');
-define('UPLOAD_DIR_TMP', './uploads/tmp/');
-define('UPLOAD_DIR_WATERMARK', './images/logo_watermark1.png');
 define('UPLOAD_FILETYPE', 'gif|jpg|png');
 define('UPLOAD_MAXSIZE', 2048); //Expresado en Kylobytes
 
