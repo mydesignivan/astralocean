@@ -24,7 +24,7 @@ class Facilities extends Controller {
      **************************************************************************/
     public function index(){
         $this->_data = $this->dataview->set_data(array(
-            'info' => array('facilities' => $this->pages_model->get_content('facilities'))
+            'info' => $this->pages_model->get_info('facilities')
         ));        
         $this->load->view('template_frontpage_view', $this->_data);
     }

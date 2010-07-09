@@ -29,10 +29,10 @@
             </div>
             <div class="column2">
                 <div id="slider" class="slider">
-                    <img src="images/slider/foto-1.jpg" alt="Connecting the dots" width="571" height="216" />
-                    <img src="images/slider/foto-2.jpg" alt="Connecting the dots" width="571" height="216" />
-                    <img src="images/slider/foto-3.jpg" alt="Connecting the dots" width="571" height="216" />
-                    <img src="images/slider/foto-4.jpg" alt="Connecting the dots" width="571" height="216" />
+                    <img src="images/slider/foto-1.jpg" alt="Connecting the dots" title="" width="571" height="216" />
+                    <img src="images/slider/foto-2.jpg" alt="Connecting the dots" title="" width="571" height="216" />
+                    <img src="images/slider/foto-3.jpg" alt="Connecting the dots" title="" width="571" height="216" />
+                    <img src="images/slider/foto-4.jpg" alt="Connecting the dots" title="" width="571" height="216" />
                 </div>
                 <div id="slide-label" class="slide-label"></div>
             </div>
@@ -42,8 +42,8 @@
         <div class="clear"></div>
         <div class="intro left">
             <span>Hake</span>
-            <p><img src="images/pescados/hake.jpg" alt="Hake" width="125" />Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus,
-            nec tristique odio. Morbi luctus.</p>
+            <p><img src="images/pescados/hake.jpg" alt="Hake" width="125" height="95" /></p>
+            Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus, nec tristique odio. Morbi luctus.</p>
         </div>
 
         <div class="intro left">
@@ -54,8 +54,8 @@
 
         <div class="intro left">
             <span>Ray</span>
-            <p><img src="images/pescados/ray.jpg" alt="Ray" width="125" />Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus,
-            nec tristique odio. Morbi luctus.</p>
+            <p><img src="images/pescados/ray.jpg" alt="Ray" width="125" /></p>
+            <p class="clear">Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus, nec tristique odio. Morbi luctus.</p>
         </div>
 
         <div class="intro left">

@@ -19,7 +19,7 @@
     ?>
         <tr id="tr<?=$row['order']?>_<?=$row['product_id']?>">
             <td class="cell1">
-                <a href="<?=$url?>"><img src="<?=UPLOAD_DIR.$row['image_thumb']?>" alt="" width="90" height="" /></a>
+                <a href="<?=$url?>"><img src="<?=UPLOAD_DIR.$row['image_thumb']?>" alt="<?=$row['image_thumb']?>" width="90" height="70" /></a>
                 <a href="<?=$url?>"><?=$row['productname'];?></a>
             </td>
             <td class="cell2 handle" style="cursor:move;">

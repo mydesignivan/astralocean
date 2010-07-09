@@ -1,4 +1,5 @@
 <script type="text/javascript" src="js/plugins/tinymce/tiny_mce.js"></script>
+<script type="text/javascript" src="js/plugins/tinymce/init.js"></script>
 <script type="text/javascript">
 <!--
 function openKCFinder(field_name, url, type, win) {

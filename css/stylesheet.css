@@ -16,6 +16,8 @@ body {
 .spacer { padding-bottom: 20px; }
 .text-center{text-align: center !important;}
 .hide{display: none;}
+.text-small{font-size: 90%;}
+.last{margin-right: 0 !important; padding-right: 0 !important;}
 
 /* General text */
 small {
@@ -150,6 +152,11 @@ input {
 	input.larger {
 		width: 400px;
 	}
+
+.input-form{
+    background-color: #fff;
+    width: 300px;
+}
 .textarea-small{
     width: 210px;
     height: 32px;
@@ -429,14 +436,16 @@ h3.title1 {
 		.rounded-box {
 			float: right;
 		}
-		.rounded-box .inner, .folio-box .inner {
+		.rounded-box .inner,
+                .folio-box .inner {
 			border-left: 1px solid #eee;
 			border-right: 1px solid #eee;
 			background: #F7F7F7;
 			padding: 0 6px;
                         padding-bottom: 10px;
 		}
-		.rounded-box .box-end, .folio-box .box-end {
+		.rounded-box .box-end,
+                .folio-box .box-end {
 			height: 8px;
 			background: url(../images/column-slice.gif) -308px 0 no-repeat;
 		}
@@ -493,7 +502,7 @@ h3.title1 {
 /**** LOGIN ****/
 .login{
     width:300px;
-    margin: 80px auto;
+    margin: 20px auto;
     padding:10px;
     border:2px solid #ccc;
     -moz-border-radius: 5px;
@@ -522,6 +531,7 @@ h3.title1 {
         padding:5px;
         text-align: center;
         margin-top:10px;
+        font-size: 90%;
     }
 
 /**** MY ACCOUNT ****/
@@ -629,9 +639,11 @@ fieldset.fieldset-form{
     }
         .header .column2 .slider{
             float:left;
+            position: relative;
             width: 571px;
             height: 216px;
             overflow: hidden;
+            z-index: 0;
         }
         .header .column2 .slide-label{
             float:left;
@@ -642,7 +654,7 @@ fieldset.fieldset-form{
             height: 32px;
             top:-32px;
             right: 1px;
-            z-index: 10;
+            z-index: 20;
         }
 
 /*------------------------------------------------------------------------------
@@ -680,3 +692,74 @@ ul.gallery-facilities li{
     height: 157px;
     margin: 5px;
 }
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA LA SECCION DETALLE PRODUCTO
+ -----------------------------------------------------------------------------*/
+.prodet-col1{
+    float: left;
+    width: 200px;
+    height: inherit;
+    /*border:1px solid red;*/
+}
+.prodet-col2{
+    float: right;
+    width: 240px;
+    margin-left: 10px;
+    font-size: 90% !important;
+    /*border:1px solid red;*/
+}
+
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA LA SECCION CONTACT
+ -----------------------------------------------------------------------------*/
+.contact{
+    width: 298px;
+    font-size: 90%;
+}
+    .contact .label-1{
+        float: left;
+        width: 70px;
+        font-weight: bold;
+        margin: 0;
+        padding: 0;
+        color: #ababab;
+        font-size: 90%;
+    }
+    .contact .text{
+        float: left;
+        color: #118ad6;
+        font-weight: normal;
+    }
+    .contact .cont{
+        background-color: #F7F7F7;
+        float: left;
+        clear: both;
+        padding: 0 3px 0 10px;
+    }
+        .contact .cont .cont-top{
+            float: left;
+            background: url(../images/cont_top.png) no-repeat top left;
+            width: 281px;
+            height: 7px;
+        }
+        .contact .cont .cont-inner{
+            float: left;
+            clear: left;
+            background: url(../images/cont_inner.png) repeat-y;
+            width: 271px;
+            height: auto;
+            padding: 2px 8px 2px 8px;
+        }
+        .contact .cont .cont-bottom{
+            float: left;
+            clear: left;
+            background: url(../images/cont_bottom.png) no-repeat;
+            width: 281px;
+            height: 7px;
+        }
+    .contact h3{
+        color: #7C7C7C;
+        font-size: 90%;
+        font-weight: bold;
+    }

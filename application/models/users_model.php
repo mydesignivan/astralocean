@@ -22,7 +22,7 @@ class Users_model extends Model {
             'commerdiv_email'    => $_POST['txtCommerDivEmail'],
             'commerdivar_phone'  => $_POST['txtCommerDivArPhone'],
             'commerdives_phone'  => $_POST['txtCommerdivEsPhone'],
-            'prodplan_phone'     => $_POST['txtProdPlanPhone'],
+            'pp_phone'           => $_POST['txtProdPlanPhone'],
             'prodplan_email'     => $_POST['txtProdPlanEmail'],
             'skype'              => $_POST['txtSkype'],
             'username'           => $_POST['txtUser'],

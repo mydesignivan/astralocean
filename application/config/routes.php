@@ -43,6 +43,8 @@
 $route['default_controller'] = "index";
 $route['scaffolding_trigger'] = "";
 
+$route['products/:any'] = "products/display/$1";
+
 
 /* End of file routes.php */
 /* Location: ./system/application/config/routes.php */

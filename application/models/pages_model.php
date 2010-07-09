@@ -16,9 +16,10 @@ class Pages_model extends Model {
 
         }else{
             $data = array(
-                'pagename'        =>  $_POST['pagename'],
-                'content'         =>  $_POST['content'],
-                'last_modified'   =>  date('Y-m-d H:i:s')
+                'title'          =>  $_POST['title'],
+                'pagename'       =>  $_POST['pagename'],
+                'content'        =>  $_POST['content'],
+                'last_modified'  =>  date('Y-m-d H:i:s')
             );
             $res = $this->db->insert(TBL_PAGES, $data);
         }
@@ -34,6 +35,14 @@ class Pages_model extends Model {
         }
 
         return $content;
+    }
+
+    public function get_list(){
+        return $this->db->get_where(TBL_PAGES);
+    }
+
+    public function get_info($pagename){
+        return $this->db->get_where(TBL_PAGES, array('pagename'=>$pagename))->row_array();
     }
 
 

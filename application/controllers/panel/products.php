@@ -33,7 +33,7 @@ class Products extends Controller {
     public function index(){
         $this->load->library('pagination');
         
-        $listProducts = $this->products_model->get_list($this->_count_per_page, $this->_offset);
+        $listProducts = $this->products_model->get_list_panel($this->_count_per_page, $this->_offset);
 
         $config['base_url'] = site_url('/panel/products/index/page/');
         $config['total_rows'] = $listProducts['count_rows'];
@@ -45,6 +45,7 @@ class Products extends Controller {
             'tlp_script'    =>  array('tablesorter', 'products_list'),
             'listProducts'  =>  $listProducts['result']
         ));
+
         $this->load->view('template_paneladmin_view', $this->_data);
     }
 
@@ -55,15 +56,17 @@ class Products extends Controller {
 
         if( $id ){  // Edit
             $this->_data = $this->dataview->set_data(array(
-                'tlp_section'  =>  'paneladmin/products_form_view.php',
-                'info'         =>  $this->products_model->get_info($id),
-                'tlp_script'   =>  $tlp_script
+                'tlp_section'        =>  'paneladmin/products_form_view.php',
+                'tlp_script'         =>  $tlp_script,
+                'tlp_title_section'  =>  'Edit Product',
+                'info'               =>  $this->products_model->get_info($id)
             ));
 
         }else{    // New
             $this->_data = $this->dataview->set_data(array(
-                'tlp_section'  =>  'paneladmin/products_form_view.php',
-                'tlp_script'   =>  $tlp_script
+                'tlp_section'        =>  'paneladmin/products_form_view.php',
+                'tlp_script'         =>  $tlp_script,
+                'tlp_title_section'  =>  'New Product'
             ));
         }
 
@@ -73,22 +76,19 @@ class Products extends Controller {
     public function create(){
         if( $_SERVER['REQUEST_METHOD']=="POST" ){         
 
-            /*$res = $this->_upload();
+            $res = $this->_upload();
 
             if( $res['status']=="ok" ){
                 $res = $this->products_model->create($this->_filename);
                 if( $res['status']=="error" ) $this->_delete_images($this->_filename);
-            }*/
+            }
 
-            //if( $res['status']=="error" ){
-                /*$this->session->set_flashdata('savestatus', $res['status']);
-                $this->session->set_flashdata('msgerror', @$res['msgerror']);*/
-            //}
+            if( $res['status']=="error" ){
+                $this->session->set_flashdata('savestatus', $res['status']);
+                $this->session->set_flashdata('msgerror', @$res['msgerror']);
+            }
 
-            $this->session->set_flashdata('savestatus', 'asdasd');
-            redirect('/panel/products/form/');
-
-            //redirect($res['status']=="ok" ? '/panel/products/' : '/panel/products/form/');
+            redirect($res['status']=="ok" ? '/panel/products/' : '/panel/products/form/');
         }
     }
 
@@ -106,11 +106,8 @@ class Products extends Controller {
             }
 
             if( $res['status']=="error" ){
-                $this->session->set_userdata('savestatus', $res['status']);
-                $this->session->set_userdata('msgerror', @$res['msgerror']);
-            }else{
-                $this->session->set_userdata('savestatus', "");
-                $this->session->set_userdata('msgerror', "");
+                $this->session->set_flashdata('savestatus', $res['status']);
+                $this->session->set_flashdata('msgerror', @$res['msgerror']);
             }
 
             redirect($res['status']=="ok" ? '/panel/products/' : '/panel/products/form/'.$_POST['product_id']);
@@ -128,6 +125,9 @@ class Products extends Controller {
     public function ajax_order(){
         echo $this->products_model->order($_POST) ? "ok" : "error";
         die();
+    }
+    public function ajax_check_exists(){
+        die($this->products_model->check() ? "yes" : "no");
     }
 
 

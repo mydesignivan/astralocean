@@ -2,8 +2,8 @@
 
 <!-- start: left-column -->
 <div id="left-column" class="content">
-    <h1>Our Company</h1>
-    <?=$info['ourcompany']?>
+    <h1><?=$info['title']?></h1>
+    <?=$info['content']?>
 </div>
 <!-- end: left-column -->
 

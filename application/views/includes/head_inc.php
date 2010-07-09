@@ -10,7 +10,7 @@
 <!--[if lte IE 6]>
 <link href="css/ie6.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
 <!--[if lte IE 7]>
-<link href="css/ie.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
+<link href="css/ie7.css" rel="stylesheet" type="text/css" media="screen" /><![endif]-->
 
 
 <script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
@@ -36,5 +36,5 @@
 <![endif]-->
 
 <!--[if IE 6]>
-<script type="text/javascript" src="_js/plugins/DD_belatedPNG.js"></script>
+<script type="text/javascript" src="js/helpers/DD_belatedPNG.js"></script>
 <![endif]-->

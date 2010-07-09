@@ -9,7 +9,7 @@ class Products_model extends Model {
 
     /* PUBLIC FUNCTIONS
      **************************************************************************/
-    public function get_list($limit, $offset) {
+    public function get_list_panel($limit, $offset) {
         $sql = 'product_id, productname, image, image_thumb, order';
         $ret = array();
 
@@ -24,24 +24,25 @@ class Products_model extends Model {
         return $ret;
     }
 
-    public function get_info($id) {
-        return $this->db->get_where(TBL_PRODUCTS, array('product_id'=>$id))->row_array();
+    public function get_list_front() {
+        $this->db->order_by('order', 'asc');
+        return $this->db->get_where(TBL_PRODUCTS);
+    }
+
+    public function get_info($p) {
+        if( is_numeric($p) ) $where = array('product_id'=>$p);
+        else $where = array('reference'=>$p);
+        return $this->db->get_where(TBL_PRODUCTS, $where)->row_array();
     }
 
     public function create($filename){
         $part = part_filename($filename);
-        $reference = normalize($_POST['txtProductName']);
 
-        $data = array(
-            'productname'   => $_POST['txtProductName'],
-            'reference'     => $reference,
-            'content_about'                  => $_POST['txtContent_about'],
-            'content_productcharacteristics' => $_POST['txtContent_productcharacteristics'],
-            'content_freezingmethods'        => $_POST['txtContent_freezingmethods'],
-            'date_added'  => date('Y-m-d H:i:s'),
-            'image'       => $filename,
-            'image_thumb' => $part['basename']."_thumb.".$part['ext']
-        );
+        $data = $this->_get_data();
+        $data['date_added'] = date('Y-m-d H:i:s');
+        $data['image'] = $filename;
+        $data['image_thumb'] = $part['basename']."_thumb.".$part['ext'];
+        $data['order'] = $this->_get_num_order();
 
         if( !$this->db->insert(TBL_PRODUCTS, $data) ) {
             return array(
@@ -56,13 +57,9 @@ class Products_model extends Model {
     }
 
     public function edit($id, $filename){
-        $data = array(
-            'productname'   => $_POST['txtProductName'],
-            'content_about'                  => $_POST['txtContent_about'],
-            'content_productcharacteristics' => $_POST['txtContent_productcharacteristics'],
-            'content_freezingmethods'        => $_POST['txtContent_freezingmethods'],
-            'last_modified' => date('Y-m-d H:i:s')
-        );
+
+        $data = $this->_get_data();
+        $data['last_modified'] = date('Y-m-d H:i:s');
 
         if( !empty($filename) ) {
             $part = part_filename($filename);
@@ -111,8 +108,34 @@ class Products_model extends Model {
         return true;
     }
 
+    public function check(){
+        if( !is_numeric($_POST['id']) ){
+            $where = array('productname' => trim($_POST['name']));
+        }else{
+            $where = array('productname' => trim($_POST['name']), 'product_id <>'=>$_POST['id']);
+        }
+        $query = $this->db->get_where(TBL_PRODUCTS, $where);
+        return $query->num_rows>0;
+    }
+
     /* PRIVATE FUNCTIONS
      **************************************************************************/
+    private function _get_data(){
+        return array(
+            'productname'   => $_POST['txtProductName'],
+            'reference'     => normalize($_POST['txtProductName']),
+            'content_about'                  => $_POST['txtContent_about'],
+            'content_productcharacteristics' => $_POST['txtContent_productcharacteristics'],
+            'content_freezingmethods'        => $_POST['txtContent_freezingmethods']
+        );
+    }
+
+    private function _get_num_order(){
+        $this->db->select_max('`order`');
+        $row = $this->db->get(TBL_PRODUCTS)->row_array();
+        return is_null($row['order']) ? 1 : $row['order']+1;
+    }
+
 
 }
 ?>

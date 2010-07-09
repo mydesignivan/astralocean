@@ -39,7 +39,7 @@
             <div class="row w1">
                 <h6>Production and Planning</h6>
                 <label class="left">Phone</label>
-                <textarea name="txtProdPlanPhone" rows="22" cols="10" class="right textarea-small"><?=$info['prodplan_phone'];?></textarea>
+                <textarea name="txtProdPlanPhone" rows="22" cols="10" class="right textarea-small"><?=$info['pp_phone'];?></textarea>
             </div>
             <div class="row w1">
                 <label class="left">Email</label>
@@ -77,6 +77,6 @@
 
 <script type="text/javascript">
 <!--
-    Account.initializer();
+    Account.initializer('<?=$this->session->flashdata('savestatus')?>');
 -->
 </script>

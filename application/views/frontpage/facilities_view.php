@@ -2,9 +2,9 @@
 
 <!-- start: left-column -->
 <div id="left-column" class="content">
-    <h1>Facilities</h1>
+    <h1><?=$info['title']?></h1>
 
-    <?=nl2br($info['facilities']);?>
+    <?=nl2br($info['content'])?>
 </div>
 <!-- end: left-column -->
 

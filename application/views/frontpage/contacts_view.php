@@ -47,56 +47,79 @@ Nam ornare. Vivamus dolor metus, condimentum ac, iaculis non.</p>            -->
 
 <!-- start: right-column -->
 
-<div class="rounded-box">
-    <!--<div class="inner content">
-        <h6>E-mail: <a href="mailto:info@astralocean.net">info@astralocean.net</a></h6>
-    </div>-->
-
+<div class="rounded-box contact">
 
 <?php if( !empty($info['skype']) ) {?>
-    <div class="inner content">
-        <h6>Skype: <?=$info['skype']?></h6>
+    <div class="cont">
+        <div class="cont-top"></div>
+        <div class="cont-inner">
+            <label class="label-1">Skype:</label>
+            <div class="text"><?=$info['skype']?></div>
+        </div>
+        <div class="cont-bottom"></div>
     </div>
 <?php }?>
+
 <?php if( !empty($info['commerdiv_email']) ) {?>
-    <div class="inner content">
-        <h3 class="title1">Commercial Division</h3>
-        <h6>E-mail: <a href="mailto:<?=$info['commerdiv_email']?>"><?=$info['commerdiv_email']?></a></h6>
+    <div class="cont">
+        <h3>Commercial Division</h3>
+        <div class="cont-top"></div>
+        <div class="cont-inner">
+            <label class="label-1">E-mail:</label>
+            <div class="text"><a href="mailto:<?=$info['commerdiv_email']?>"><?=$info['commerdiv_email']?></a></div>
+        </div>
+        <div class="cont-bottom"></div>
     </div>
 <?php }?>
+
 <?php if( !empty($info['commerdivar_phone']) ) {?>
-    <div class="inner content">
-        <h3 class="title1">Commercial Division: ARGENTINA</h3>
-        <h6>Phone: <?=nl2br($info['commerdivar_phone'])?></h6>
+    <div class="cont">
+        <h3>Commercial Division: ARGENTINA</h3>
+        <div class="cont-top"></div>
+        <div class="cont-inner">
+            <label class="label-1">Phone:</label>
+            <div class="text"><?=nl2br($info['commerdivar_phone'])?></div>
+        </div>
+        <div class="cont-bottom"></div>
     </div>
 <?php }?>
+
 <?php if( !empty($info['commerdives_phone']) ) {?>
-    <div class="inner content">
-        <h3 class="title1">Commercial Division: ESPA&Ntilde;A</h3>
-        <h6>Phone: <?=nl2br($info['commerdives_phone'])?></h6>
+    <div class="cont">
+        <h3>Commercial Division: ESPA&Ntilde;A</h3>
+        <div class="cont-top"></div>
+        <div class="cont-inner">
+            <label class="label-1">Phone:</label>
+            <div class="text"><?=nl2br($info['commerdives_phone'])?></div>
+        </div>
+        <div class="cont-bottom"></div>
     </div>
 <?php }?>
-<?php if( !empty($info['prodplan_phone']) ) {?>
-    <div class="inner content">
-        <h3 class="title1">Prduction and Planning</h3>
-        <h6>Phone: <?=nl2br($info['prodplan_phone'])?></h6>
+
+<?php if( !empty($info['pp_phone']) ) {?>
+    <div class="cont">
+        <h3>Prduction and Planning</h3>
+        <div class="cont-top"></div>
+        <div class="cont-inner">
+            <label class="label-1">Phone:</label>
+            <div class="text"><?=nl2br($info['pp_phone'])?></div>
+        </div>
+        <div class="cont-bottom"></div>
     </div>
 <?php }?>
+
 <?php if( !empty($info['prodplan_email']) ) {?>
-    <div class="inner content">
-        <h6>E-mail: <a href="mailto:<?=$info['prodplan_email']?>"><?=$info['prodplan_email']?></a></h6>
+    <div class="cont">
+        <div class="cont-top"></div>
+        <div class="cont-inner">
+            <label class="label-1">E-mail:</label>
+            <div class="text"><a href="mailto:<?=$info['prodplan_email']?>"><?=$info['prodplan_email']?></a></div>
+        </div>
+        <div class="cont-bottom"></div>
     </div>
 <?php }?>
 
-    <div class="box-end"></div><!-- corners -->
+    <div class="box-end clear"></div><!-- corners -->
 </div>
-
-<!--<div class="rounded-box">
-    <div class="inner content">
-        <p>123 Main Road East<br />
-        Cityname, ST 12345</p>
-    </div>
-    <div class="box-end"></div>
-</div>-->
 
 <!-- end: right-column -->

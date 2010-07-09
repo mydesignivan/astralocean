@@ -24,8 +24,8 @@ class Pages extends Controller {
      **************************************************************************/
     public function index(){
         $this->_data = $this->dataview->set_data(array(
-            'tlp_script'    =>  array('tinymce', 'pages')
-            //'info'  =>  $this->users_model->get_info()
+            'tlp_script'    =>  array('tinymce', 'pages'),
+            'listPages'     =>  $this->pages_model->get_list()
         ));
         $this->load->view('template_paneladmin_view', $this->_data);
     }

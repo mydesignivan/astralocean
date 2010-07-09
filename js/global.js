@@ -15,12 +15,30 @@ function AlternatedRowColors(){
     $("#tblList tr:odd").css("background-color", "#ffffff");
 }
 
-$(document).ready(function() {
+function MessageShowHide(parent, status, t){
+    if( !t ) t=5000;
+    if( status!='' ){
+        var div = $(parent).find(status=="ok" ? "div.success" : "div.error");
+        if( div.is(':visible') ){
+            setTimeout(function(){
+                div.slideUp('slow');
+            }, t);
+        }else{
+            div.slideDown('slow', function(){
+                setTimeout(function(){
+                    div.slideUp('slow');
+                }, t);
+            });
+        }
+    }
+}
 
+$(document).ready(function() {
+    
     /*------- Alternated row Colors -------*/
     AlternatedRowColors();
 
-	/*------- Hiding Portfolio Labels -------*/
+    /*------- Hiding Portfolio Labels -------*/
     $(".folio-box .inner").hover(
       function () {
         $(this).parent().find(".proj-label").slideUp("fast");
@@ -33,24 +51,16 @@ $(document).ready(function() {
     /*------- Homepage Slides -------*/
     if ($("#slider").length > 0) {
         $('#slider').cycle({
-                fx: "fade",
-                slideExpr: "img",
+            fx: "fade",
+            slideExpr: "img",
 
-                before: function() {
-                        /*$("#slide-label").fadeOut();*/
-                },
-                after: function() {
-                        /*$("#slide-label").fadeIn().html(this.alt);*/
-                }
+            before: function() {
+                /*$("#slide-label").fadeOut();*/
+            },
+            after: function() {
+                /*$("#slide-label").fadeIn().html(this.alt);*/
+            }
         });
-    }
-
-    /*------- Showcase FancyBox (lightbox) -------*/
-    if ($("a.jfancy").length > 0) {
-            $("a.jfancy").fancybox({
-                    overlayOpacity: 0.6
-            });
-
     }
 
 })

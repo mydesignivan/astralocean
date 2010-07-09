@@ -1,0 +1,39 @@
+/*------------------------------------------------------------------------------
+ - ESTILOS PARA EL HEADER
+ -----------------------------------------------------------------------------*/
+.header{
+    float:left;
+    width: inherit;
+    height: inherit;
+}
+    .header .column1{
+        float:left;
+        position: relative;
+        background: url(../images/header.png) no-repeat top left;
+        width: 533px;
+        height: 217px;
+        z-index: 10;
+    }
+    .header .column2{
+        position: absolute;
+        left:382px;
+        top:8px;
+        z-index: 9;
+    }
+        .header .column2 .slider{
+            float:left;
+            width: 571px;
+            height: 216px;
+            overflow: hidden;
+        }
+        .header .column2 .slide-label{
+            float:left;
+            clear:left;
+            background: url(../images/header_bottom.png) no-repeat;
+            position: relative;
+            width: 572px;
+            height: 32px;
+            top:-32px;
+            right: 1px;
+            z-index: 20;
+        }

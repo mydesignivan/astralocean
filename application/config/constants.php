@@ -80,7 +80,7 @@ define('UPLOAD_DIR', './uploads/');
 define('UPLOAD_FILETYPE', 'gif|jpg|png');
 define('UPLOAD_MAXSIZE', 2048); //Expresado en Kylobytes
 
-define('IMAGE_THUMB_WIDTH', 270);
+define('IMAGE_THUMB_WIDTH', 200);
 define('IMAGE_THUMB_HEIGHT', 146);
 define('IMAGE_ORIGINAL_WIDTH', 800);
 define('IMAGE_ORIGINAL_HEIGHT', 600);

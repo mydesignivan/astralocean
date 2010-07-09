@@ -2,7 +2,9 @@ var Account = new function(){
 
     /* PUBLIC METHODS
      **************************************************************************/
-    this.initializer = function(){
+    this.initializer = function(status){
+        MessageShowHide(document, status);
+
         $.validator.setting('#form1 .validator', {
             effect_show     : 'slidefade',
             validateOne     : true
@@ -19,7 +21,8 @@ var Account = new function(){
             v_required  : false,
             v_compare   : '#txtPssNew'
         });
-        
+
+        $('input[type=password]').empty();
     };
 
     this.save = function(){
