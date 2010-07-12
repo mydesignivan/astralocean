@@ -1,3 +1,9 @@
+$(document).ready(function(){
+    $('input[type=password]').each(function(){
+        this.value="";
+    });
+});
+
 var Account = new function(){
 
     /* PUBLIC METHODS
@@ -21,8 +27,6 @@ var Account = new function(){
             v_required  : false,
             v_compare   : '#txtPssNew'
         });
-
-        $('input[type=password]').empty();
     };
 
     this.save = function(){

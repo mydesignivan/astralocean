@@ -16,10 +16,10 @@
         <li>&nbsp;</li>
     </ul>
     <ul class="gallery gallery-facilities">
+        <li>&nbsp;</li>
         <li><img src="images/facilities/imagen_3.jpg" alt="" width="206" height="157" /></li>
         <li>&nbsp;</li>
         <li><img src="images/facilities/imagen_4.jpg" alt="" width="206" height="157" /></li>
-        <li>&nbsp;</li>
     </ul>
 </div>
 

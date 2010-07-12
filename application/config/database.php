@@ -50,6 +50,19 @@ $db['default']['cachedir'] = "";
 $db['default']['char_set'] = "utf8";
 $db['default']['dbcollat'] = "utf8_general_ci";
 
+/*$db['default']['hostname'] = "localhost";
+$db['default']['username'] = "jk000145_mydesign";
+$db['default']['password'] = "Octubre2008";
+$db['default']['database'] = "jk000145_proyects";
+$db['default']['dbdriver'] = "mysql";
+$db['default']['dbprefix'] = "astral_";
+$db['default']['pconnect'] = FALSE;
+$db['default']['db_debug'] = TRUE;
+$db['default']['cache_on'] = FALSE;
+$db['default']['cachedir'] = "";
+$db['default']['char_set'] = "utf8";
+$db['default']['dbcollat'] = "utf8_general_ci";*/
+
 
 /* End of file database.php */
 /* Location: ./system/application/config/database.php */

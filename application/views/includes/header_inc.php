@@ -43,37 +43,31 @@
         <div class="intro left">
             <span>Hake</span>
             <p><img src="images/pescados/hake.jpg" alt="Hake" width="125" height="95" /></p>
-            Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus, nec tristique odio. Morbi luctus.</p>
         </div>
 
         <div class="intro left">
             <span>Pargo</span>
-            <p><img src="images/pescados/pargo.jpg" alt="Pargo" width="125" />Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus,
-            nec tristique odio. Morbi luctus.</p>
+            <p><img src="images/pescados/pargo.jpg" alt="Pargo" width="125" /></p>
         </div>
 
         <div class="intro left">
             <span>Ray</span>
             <p><img src="images/pescados/ray.jpg" alt="Ray" width="125" /></p>
-            <p class="clear">Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus, nec tristique odio. Morbi luctus.</p>
         </div>
 
         <div class="intro left">
             <span>Red Snapper</span>
-            <p><img src="images/pescados/redsnapper.jpg" alt="Red Snapper" width="125" />Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus,
-            nec tristique odio. Morbi luctus.</p>
+            <p><img src="images/pescados/redsnapper.jpg" alt="Red Snapper" width="125" /></p>
         </div>
 
         <div class="intro left">
             <span>Sea Trout</span>
-            <p><img src="images/pescados/sea-trout.jpg" alt="Sea Trout" width="125" />Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus,
-            nec tristique odio. Morbi luctus.</p>
+            <p><img src="images/pescados/sea-trout.jpg" alt="Sea Trout" width="125" /></p>
         </div>
 
         <div class="intro left">
             <span>Skate</span>
-            <p><img src="images/pescados/skate.jpg" alt="Skate" width="125" />Praesent viverra dapibus ipsum vitae cursus. Proin eu dolor risus,
-            nec tristique odio. Morbi luctus.</p>
+            <p><img src="images/pescados/skate.jpg" alt="Skate" width="125" /></p>
         </div>
 <?php }?>
         <div class="clear"></div>
